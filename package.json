@@ -18,6 +18,7 @@
     "@arco-design/web-react": "^2.27.0",
     "@arco-themes/react-arco-pro": "^0.0.7",
     "@loadable/component": "^5.13.2",
+    "@monaco-editor/react": "^4.4.1",
     "@turf/turf": "^6.5.0",
     "arco-design-pro": "^2.4.0",
     "axios": "^0.24.0",
