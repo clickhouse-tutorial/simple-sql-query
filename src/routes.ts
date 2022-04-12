@@ -27,6 +27,16 @@ export const routes: Route[] = [
     ],
   },
   {
+    name: 'menu.tool',
+    key: 'tool',
+    children: [
+      {
+        name: 'menu.tool.sql',
+        key: 'sql',
+      },
+    ],
+  },
+  {
     name: 'menu.visualization',
     key: 'visualization',
     children: [
