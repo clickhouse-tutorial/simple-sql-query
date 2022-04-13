@@ -3,7 +3,7 @@ import Editor from '@monaco-editor/react';
 
 const sqlEditorStyle = {
   width: '100%',
-  height: '600px',
+  height: '400px',
   border: '1px solid #ccc',
 };
 

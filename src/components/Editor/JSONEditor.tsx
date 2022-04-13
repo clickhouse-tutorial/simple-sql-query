@@ -4,7 +4,7 @@ import Editor from '@monaco-editor/react';
 
 const jsonEditorStyle = {
   width: '100%',
-  height: '100px',
+  height: '200px',
   border: '1px solid #ccc',
 };
 

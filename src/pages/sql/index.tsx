@@ -1,5 +1,6 @@
 import React from 'react';
 import SQLEditor from '@/components/Editor/SQLEditor';
+import JSONEditor from '@/components/Editor/JSONEditor';
 import { Button, Divider, Space } from '@arco-design/web-react';
 import axios from 'axios';
 import { loader } from '@monaco-editor/react';
@@ -20,8 +21,37 @@ export default function SQLQuery() {
           格式化SQL
         </Button>
       </Space>
+
+      <Divider />
+
+      <JSONEditor />
+
+      <Divider />
+      <Space size="large">
+        <Button type="outline" onClick={() => formatJSON()}>
+          格式化JSON
+        </Button>
+      </Space>
     </div>
   );
+
+  function formatJSON() {
+    // 获取 Moncaco 实例
+    const editorRef = loader.__getMonacoInstance().editor;
+    const models = editorRef.getModels();
+    // 获取当前 JSONEditor，下标 1
+    const currentModel = models[1];
+    console.log(currentModel.id);
+    // 当前 JSONEditor里面的值
+    const currentValue = currentModel.getValue();
+    console.log(currentValue);
+
+    // 格式化json
+    const formattedJson = JSON.stringify(JSON.parse(currentValue), null, 2);
+    console.log(formattedJson);
+    //设置格式化之后的json到JSONEditor
+    currentModel.setValue(formattedJson);
+  }
 
   /**
    * 格式化 SQL 函数
@@ -30,7 +60,7 @@ export default function SQLQuery() {
     // 获取 Moncaco 实例
     const editorRef = loader.__getMonacoInstance().editor;
     const models = editorRef.getModels();
-    // 获取当前 SQLEditor
+    // 获取当前 SQLEditor，下标 0
     const currentModel = models[0];
     console.log(currentModel.id);
     // 获取当前 SQLEditor 中的值
@@ -55,6 +85,7 @@ export default function SQLQuery() {
     const editorRef = loader.__getMonacoInstance().editor;
     const models = editorRef.getModels();
     const sqlModel = models[0];
+    const jsonModel = models[1];
     console.log(sqlModel.id);
     const sql = sqlModel.getValue();
     const data = {
@@ -63,9 +94,10 @@ export default function SQLQuery() {
 
     // 发送 post 查询请求
     axios
-      .post(`/api/query`, data)
+      .post(`/sql/query`, data)
       .then((res) => {
         console.log(res.data);
+        jsonModel.setValue(JSON.stringify(res.data));
       })
       .finally(() => {
         // do nothing
