@@ -10,7 +10,7 @@ const sqlEditorStyle = {
 function SQLEditor() {
   return (
     <div style={sqlEditorStyle}>
-      <Editor defaultLanguage="sql" defaultValue={sql} theme={'vs-dark'} />
+      <Editor defaultLanguage="sql" defaultValue={sql} theme={'light'} />
     </div>
   );
 }

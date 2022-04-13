@@ -11613,6 +11613,13 @@
   "resolved" "https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz"
   "version" "1.0.3"
 
+"sql-formatter@^4.0.2":
+  "integrity" "sha1-KzWeWkxhFJjTJ7llnacynXFyRgc="
+  "resolved" "http://bnpm.byted.org/sql-formatter/-/sql-formatter-4.0.2.tgz"
+  "version" "4.0.2"
+  dependencies:
+    "argparse" "^2.0.1"
+
 "stable@^0.1.8":
   "integrity" "sha512-ji9qxRnOVfcuLDySj9qzhGSEFVobyt1kIOSkj1qZzYLzq7Tos/oUUWvotUPQLlrsidqsK6tBH89Bc9kL5zHA6w=="
   "resolved" "https://registry.npmjs.org/stable/-/stable-0.1.8.tgz"

@@ -14,7 +14,7 @@ function JSONEditor() {
       <Editor
         defaultLanguage="json"
         defaultValue={'[{"totalCount":0},{"_EXECUTE_TIME":"64ms"}]'}
-        theme={'vs-dark'}
+        theme={'light'}
       />
     </div>
   );

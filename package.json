@@ -35,7 +35,8 @@
     "react-redux": "^7.2.6",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "redux": "^4.1.2"
+    "redux": "^4.1.2",
+    "sql-formatter": "^4.0.2"
   },
   "devDependencies": {
     "@arco-plugins/webpack-react": "^1.1.1",
